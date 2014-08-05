@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516003304) do
+ActiveRecord::Schema.define(version: 20140805090233) do
+
+  create_table "games", force: true do |t|
+    t.string   "room"
+    t.integer  "min_players"
+    t.integer  "max_players"
+    t.integer  "kind"
+    t.integer  "instance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "games", ["kind"], name: "index_games_on_kind"
+  add_index "games", ["room"], name: "index_games_on_room"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
