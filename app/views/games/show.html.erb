@@ -1,29 +1,19 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Room:</strong>
-  <%= @game.room %>
+  <%= @game.room %> <span style="color:grey;">(<%= @card_game::__id__ %>)</span>
 </p>
-
 <p>
   <strong>Min players:</strong>
   <%= @game.min_players %>
 </p>
-
 <p>
   <strong>Max players:</strong>
   <%= @game.max_players %>
 </p>
-
 <p>
   <strong>Kind:</strong>
   <%= @game.kind %>
 </p>
-
-<p>
-  <strong>Instance:</strong>
-  <%= @game.instance %>
-</p>
-
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

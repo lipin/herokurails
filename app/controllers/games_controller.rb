@@ -10,8 +10,11 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @card_game = load_game(HoldEm, (@game.instance? ? @game.instance : nil))
+    unless @game.instance == @card_game::__id__
+      @game.update_attribute(:instance, @card_game::__id__)
+    end
   end
-
   # GET /games/new
   def new
     @game = Game.new
