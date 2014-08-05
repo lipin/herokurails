@@ -1,0 +1,24 @@
+default: &defaults
+  adapter: postgresql
+  encoding: unicode
+  database: herokurails-example
+  pool: 5
+  timeout: 5000
+
+development:
+  adapter: sqlite3
+  database: db/dev_herokurails.sqlite3
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test_herokurails.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  <<: *defaults
+  adapter: postgresql
+  encoding: unicode
+  database: prod_herokurails-example
